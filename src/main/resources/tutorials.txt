@@ -1,0 +1,8 @@
+Java Brains maven
+https://www.youtube.com/watch?v=al7bRZzz4oU&list=PL92E89440B7BFD0F6
+    scope "compile" is be default. Others are "test" "provided"
+    mvn archetype:generate          use this to generate the template of your project...all sorts of templates for a lot of things
+
+
+Maven tutorial luv2code
+https://www.youtube.com/watch?v=Fe6lrsPmseo&list=PLEAQNNR8IlB7uvr8EJbCNJq2I82A8cqE7&ab_channel=luv2code
