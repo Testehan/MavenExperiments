@@ -1,3 +1,5 @@
+${simple.variable}
+
 Java Brains maven
 https://www.youtube.com/watch?v=al7bRZzz4oU&list=PL92E89440B7BFD0F6
     scope "compile" is be default. Others are "test" "provided"
@@ -6,3 +8,12 @@ https://www.youtube.com/watch?v=al7bRZzz4oU&list=PL92E89440B7BFD0F6
 
 Maven tutorial luv2code
 https://www.youtube.com/watch?v=Fe6lrsPmseo&list=PLEAQNNR8IlB7uvr8EJbCNJq2I82A8cqE7&ab_channel=luv2code
+
+https://maven.apache.org/what-is-maven.html
+    Maven, a Yiddish word meaning accumulator of knowledge
+
+https://maven.apache.org/background/philosophy-of-maven.html
+https://maven.apache.org/guides/getting-started/index.html
+    You'll notice that all plugins in Maven look much like a dependency - and in some ways they are. This plugin
+    will be automatically downloaded and used - including a specific version if you request it (the default is to
+     use the latest available).
