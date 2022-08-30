@@ -19,5 +19,32 @@
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <!-- external repository that contains dependencies from Atlassian company, that are not available
+      on maven central repository-->
+    <repositories>
+        <repository>
+            <id>atlassian-public</id>
+            <url>https://packages.atlassian.com/mvn/maven-external/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <checksumPolicy>warn</checksumPolicy>
+            </releases>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <!-- just for demonstration purposes...I added a dependency from atlassian to see if the repository setttings work -->
+        <dependency>
+            <groupId>com.atlassian.mail</groupId>
+            <artifactId>atlassian-mail</artifactId>
+            <version>5.1.3</version>
+        </dependency>
+    </dependencies>
     
 </project>
