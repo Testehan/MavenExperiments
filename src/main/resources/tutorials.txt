@@ -1,4 +1,3 @@
-${simple.variable}
 
 Java Brains maven
 https://www.youtube.com/watch?v=al7bRZzz4oU&list=PL92E89440B7BFD0F6
@@ -17,3 +16,18 @@ https://maven.apache.org/guides/getting-started/index.html
     You'll notice that all plugins in Maven look much like a dependency - and in some ways they are. This plugin
     will be automatically downloaded and used - including a specific version if you request it (the default is to
      use the latest available).
+
+     To reference a property defined in your pom.xml, the property name uses the names of the XML elements that
+     define the value, with "pom" being allowed as an alias for the project (root) element. So ${project.name}
+     refers to the name of the project, ${project.version} refers to the version of the project,
+     ${project.build.finalName} refers to the final name of the file created when the built project is packaged,
+      etc. Note that some elements of the POM have default values, so don't need to be explicitly defined in your
+      pom.xml for the values to be available here. Similarly, values in the user's settings.xml can be referenced
+      using property names beginning with "settings" (for example, ${settings.localRepository} refers to the path
+      of the user's local repository)
+
+      Filtering resources can also get values from system properties; either the system properties built into Java
+      (like java.version or user.home) or properties defined on the command line using the standard Java -D parameter.
+
+      For deploying jars to an external repository, you have to configure the repository url in the pom.xml and
+      the authentication information for connectiong to the repository in the settings.xm
