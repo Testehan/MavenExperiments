@@ -7,10 +7,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>module1</artifactId>
+    <artifactId>cleanPluginExamples</artifactId>
     <packaging>jar</packaging>
 
-    <name>module1</name>
+    <name>cleanPluginExamples</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -34,11 +34,25 @@
     </dependencies>
 
     <build>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
+        <plugins>
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.2.0</version>
+                <!-- the Clean Plugin can be put into a project's pom.xml so that it gets executed everytime the
+                 project is built> -->
+                <executions>
+                    <execution>
+                        <id>auto-clean</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <skip>false</skip>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 </project>

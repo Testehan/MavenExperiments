@@ -7,10 +7,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>module2</artifactId>
+    <artifactId>resourcesPluginExamples</artifactId>
     <packaging>jar</packaging>
 
-    <name>module2</name>
+    <name>resourcesPluginExamples</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -27,8 +27,18 @@
 
         <dependency>
             <groupId>com.testehan.maven</groupId>
-            <artifactId>module1</artifactId>
+            <artifactId>cleanPluginExamples</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
+
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
 </project>
