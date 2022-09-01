@@ -12,6 +12,8 @@
     <modules>
         <module>cleanPluginExamples</module>
         <module>resourcesPluginExamples</module>
+        <module>compilerPluginExamples</module>
+        <module>deployPluginExamples</module>
     </modules>
 
 

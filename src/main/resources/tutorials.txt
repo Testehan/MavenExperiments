@@ -31,3 +31,8 @@ https://maven.apache.org/guides/getting-started/index.html
 
       For deploying jars to an external repository, you have to configure the repository url in the pom.xml and
       the authentication information for connectiong to the repository in the settings.xm
+
+https://maven.apache.org/plugins/index.html
+    https://maven.apache.org/plugins/maven-clean-plugin/
+    https://maven.apache.org/plugins/maven-compiler-plugin/
+    https://maven.apache.org/plugins/maven-deploy-plugin/
