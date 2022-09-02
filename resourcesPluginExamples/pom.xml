@@ -17,6 +17,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -34,11 +36,32 @@
 
 
     <build>
+
+        <filters>
+            <filter>src\main\resources\filter.properties</filter>
+        </filters>
+
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
                 <filtering>true</filtering>
             </resource>
+            <resource> <!-- no filtering means no values for the files in this folder -->
+                <directory>src/main/resources2</directory>
+                <excludes>
+                    <exclude>excludedFile.txt</exclude>
+                    <exclude>**/*.bmp</exclude>
+                    <exclude>**/*.jpg</exclude>
+                </excludes>
+            </resource>
         </resources>
+
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+                <filtering>true</filtering>
+            </testResource>
+        </testResources>
+
     </build>
 </project>
