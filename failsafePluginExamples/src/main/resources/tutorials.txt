@@ -1,0 +1,11 @@
+https://maven.apache.org/surefire/maven-failsafe-plugin/usage.html
+https://www.baeldung.com/maven-integration-test
+    Followed this, but did not create profiles..
+    TODO I can continue to add profiles / unit tests etc maybe to this..
+
+    if you run mvn verify a jetty instance is started, the war is deployed and the integration test
+    RestIT is executed, after which the server is stopped.
+
+    if you run mvn jetty:run  then the server will start and if you go in a browser to the page
+    http://localhost:8999/  (check the logs of the mvn execution because the port might be different) then
+    you will see the message from the endpoint
