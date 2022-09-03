@@ -1,0 +1,5 @@
+You need to run "mvn site" in order to generate the project website
+
+The Site Plugin can also be used to start up the site in Jetty. To do this, execute:
+    mvn site:run
+The server will, by default, be started on http://localhost:8080/.
