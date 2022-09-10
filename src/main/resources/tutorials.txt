@@ -32,7 +32,49 @@ https://maven.apache.org/guides/getting-started/index.html
       For deploying jars to an external repository, you have to configure the repository url in the pom.xml and
       the authentication information for connectiong to the repository in the settings.xm
 
+https://maven.apache.org/guides/introduction/introduction-to-archetypes.html
+
+https://maven.apache.org/guides/introduction/introduction-to-the-pom.html
+    https://maven.apache.org/ref/3.6.3/maven-model-builder/super-pom.html
+        All POMs extend the Super POM unless explicitly set
+
 https://maven.apache.org/plugins/index.html
     https://maven.apache.org/plugins/maven-clean-plugin/
     https://maven.apache.org/plugins/maven-compiler-plugin/
     https://maven.apache.org/plugins/maven-deploy-plugin/
+    https://maven.apache.org/surefire/maven-failsafe-plugin/
+        The Failsafe Plugin is designed to run integration tests while the Surefire Plugin is designed to run unit tests.
+
+        https://maven.apache.org/surefire/maven-failsafe-plugin/usage.html
+        https://www.baeldung.com/maven-integration-test
+        https://maven.apache.org/surefire/maven-failsafe-plugin/examples/skipping-tests.html
+        https://maven.apache.org/surefire/maven-failsafe-plugin/examples/inclusion-exclusion.html
+        https://maven.apache.org/surefire/maven-failsafe-plugin/examples/rerun-failing-tests.html
+        https://maven.apache.org/surefire/maven-failsafe-plugin/examples/debugging.html
+        https://maven.apache.org/surefire/maven-failsafe-plugin/examples/fork-options-and-parallel-execution.html
+
+    https://maven.apache.org/plugins/maven-install-plugin/
+    https://maven.apache.org/plugins/maven-resources-plugin/
+    https://maven.apache.org/plugins/maven-site-plugin/
+
+    https://maven.apache.org/surefire/maven-surefire-plugin/
+    https://maven.apache.org/surefire/maven-surefire-plugin/examples/junit-platform.html
+        for this plugin i did not play with examples in this project, as I used the plugin in
+        the Tests project, where I did JUnit5 etc
+
+    https://maven.apache.org/surefire/maven-surefire-report-plugin/
+        builds HTML reports out of junit and IT tests. Also in the Tests project
+
+    https://maven.apache.org/plugins/maven-checkstyle-plugin/
+    https://maven.apache.org/plugins/maven-checkstyle-plugin/examples/custom-checker-config.html
+
+    https://maven.apache.org/plugins/maven-jar-plugin/
+    https://maven.apache.org/plugins/maven-jar-plugin/usage.html
+    https://maven.apache.org/plugins/maven-jar-plugin/examples/include-exclude.html
+        Added this plugin in module sitePluginExamples ;)
+
+    https://maven.apache.org/plugins/maven-shade-plugin/
+    https://maven.apache.org/plugins/maven-shade-plugin/examples/includes-excludes.html
+    https://maven.apache.org/plugins/maven-shade-plugin/examples/executable-jar.html
+
+

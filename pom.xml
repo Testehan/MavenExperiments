@@ -14,6 +14,9 @@
         <module>resourcesPluginExamples</module>
         <module>compilerPluginExamples</module>
         <module>deployPluginExamples</module>
+        <module>failsafePluginExamples</module>
+        <module>sitePluginExamples</module>
+        <module>checkstylePluginExamples</module>
     </modules>
 
 
