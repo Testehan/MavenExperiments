@@ -77,4 +77,32 @@ https://maven.apache.org/plugins/index.html
     https://maven.apache.org/plugins/maven-shade-plugin/examples/includes-excludes.html
     https://maven.apache.org/plugins/maven-shade-plugin/examples/executable-jar.html
 
+https://maven.apache.org/pom.html
+     Install the dependency locally using the install plugin. The method is the simplest recommended method. For example:
+     mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -DartifactId=non-maven-proj -Dversion=1 -Dpackaging=jar
 
+    The classifier distinguishes artifacts that were built from the same POM but differ in content. It is some optional and
+    arbitrary string that - if present - is appended to the artifact name just after the version number.
+    As a motivation for this element, consider for example a project that offers an artifact targeting Java 11 but at the
+    same time also an artifact that still supports Java 1.8. The first artifact could be equipped with the classifier
+    jdk11 and the second one with jdk8 such that clients can choose which one to use.
+    Another common use case for classifiers is to attach secondary artifacts to the project's main artifact. If you browse
+    the Maven central repository, you will notice that the classifiers "sources" and "javadoc" are used to deploy the project
+    source code and API docs along with the packaged class files.
+
+    https://stackoverflow.com/questions/6646959/difference-between-maven-scope-compile-and-provided-for-jar-packaging
+    https://www.baeldung.com/maven-dependency-scopes
+
+    TODO
+    !!!Ramas la Aggregation (or Multi-Module) !!!!!!!!
+
+https://maven.apache.org/settings.html
+    mvn help:active-profiles - To see which profile will activate in a certain build, use the maven-help-plugin
+
+    updatePolicy: This element specifies how often updates should attempt to occur.
+     Maven will compare the local POM's timestamp (stored in a repository's maven-metadata file)
+     to the remote. The choices are: always, daily (default), interval:X (where X is an integer
+     in minutes) or never.
+
+     https://maven.apache.org/guides/mini/guide-encryption.html
+    https://stackoverflow.com/questions/46661480/how-to-secure-and-encrypt-setting-xml-paswords-file-in-maven
