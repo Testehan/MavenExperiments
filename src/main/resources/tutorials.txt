@@ -93,6 +93,7 @@ https://maven.apache.org/pom.html
     https://stackoverflow.com/questions/6646959/difference-between-maven-scope-compile-and-provided-for-jar-packaging
     https://www.baeldung.com/maven-dependency-scopes
 
+    https://stackoverflow.com/questions/2619598/differences-between-dependencymanagement-and-dependencies-in-maven
     TODO
     !!!Ramas la Aggregation (or Multi-Module) !!!!!!!!
 
