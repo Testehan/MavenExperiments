@@ -94,8 +94,29 @@ https://maven.apache.org/pom.html
     https://www.baeldung.com/maven-dependency-scopes
 
     https://stackoverflow.com/questions/2619598/differences-between-dependencymanagement-and-dependencies-in-maven
-    TODO
-    !!!Ramas la Aggregation (or Multi-Module) !!!!!!!!
+
+https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html
+    mvn clean deploy
+    The same command can be used in a multi-module scenario (i.e. a project with one or more subprojects). Maven traverses
+    into every subproject and executes clean, then executes deploy (including all of the prior build phase steps)
+
+    The phases named with hyphenated-words (pre-*, post-*, or process-*) are not usually directly called from the command
+    line. These phases sequence the build, producing intermediate results that are not useful outside the build. In the
+    case of invoking integration-test, the environment may be left in a hanging state.
+
+    Code coverage tools such as Jacoco and execution container plugins such as Tomcat, Cargo, and Docker bind goals to
+    the pre-integration-test phase to prepare the integration test container environment. These plugins also bind goals
+    to the post-integration-test phase to collect coverage statistics or decommission the integration test container.
+
+    Failsafe and code coverage plugins bind goals to integration-test and verify phases. The net result is test and
+    coverage reports are available after the verify phase. If integration-test were to be called from the command line,
+    no reports are generated. Worse is that the integration test container environment is left in a hanging state; the
+    Tomcat webserver or Docker instance is left running, and Maven may not even terminate by itself.
+
+
+    https://stackoverflow.com/questions/26607834/maven-lifecycle-vs-phase-vs-plugin-vs-goal/
+
+
 
 https://maven.apache.org/settings.html
     mvn help:active-profiles - To see which profile will activate in a certain build, use the maven-help-plugin
