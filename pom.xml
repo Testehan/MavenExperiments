@@ -18,6 +18,7 @@
         <module>sitePluginExamples</module>
         <module>checkstylePluginExamples</module>
         <module>scopesExamples</module>
+        <module>profileExamples</module>
     </modules>
 
 

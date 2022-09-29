@@ -113,10 +113,43 @@ https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html
     no reports are generated. Worse is that the integration test container environment is left in a hanging state; the
     Tomcat webserver or Docker instance is left running, and Maven may not even terminate by itself.
 
+     Plugins are artifacts that provide goals to Maven. Furthermore, a plugin may have one or more goals wherein each
+     goal represents a capability of that plugin. For example, the Compiler plugin has two goals: compile and testCompile.
+     The former compiles the source code of your main code, while the latter compiles the source code of your test code
+
+     Note that adding the plugin on its own is not enough information - you must also specify the goals you want to run
+     as part of your build.
+
+     you can use the <executions> element to gain more control over the order of particular goals.
 
     https://stackoverflow.com/questions/26607834/maven-lifecycle-vs-phase-vs-plugin-vs-goal/
 
 
+https://maven.apache.org/guides/introduction/introduction-to-profiles.html
+    Different types of profile and where each is defined
+        Per Project
+            - Defined in the POM itself (pom.xml).
+        Per User
+            - Defined in the Maven-settings (%USER_HOME%/.m2/settings.xml).
+        Global
+            - Defined in the global Maven-settings (${maven.home}/conf/settings.xml).
+
+        Depending on where you specify a profile, you can customize various elements...(see on the link above which)
+
+    Profiles can be explicitly specified using the -P command line flag.
+
+    This flag is followed by a comma-delimited list of profile IDs to use. The profile(s) specified in the option
+    are activated in addition to any profiles which are activated by their activation configuration or the
+    <activeProfiles> section in settings.xml
+
+    !!!
+     In case multiple profiles are active in the same POM or external file, the ones which are defined later take
+     precedence over the ones defined earlier (independent of their profile id and activation order).
+
+     mvn help:effective-pom -P skipAllTests
+        this will print the effective pom file in the console...usefull when debugging a build or maven stuff
+
+    https://mkyong.com/maven/maven-profiles-example/
 
 https://maven.apache.org/settings.html
     mvn help:active-profiles - To see which profile will activate in a certain build, use the maven-help-plugin

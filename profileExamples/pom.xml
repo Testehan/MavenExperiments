@@ -1,0 +1,104 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>MavenExperiments</artifactId>
+        <groupId>com.testehan.maven</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>profileExamples</artifactId>
+    <packaging>jar</packaging>
+
+    <name>profileExamples</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.9.0</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!--suggested on mkyong.com to use this to display active profile in compile phase -->
+            <!-- this is awesome for debugging -->
+            <!-- or you can use  mvn help:active-profiles    will show you active profiles, maybe forgoten ones from
+             settings.xml
+                mvn help:active-profiles -Denv=dev       again..will show profiles activated, and their source
+             -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-help-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>show-profiles</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>active-profiles</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M7</version>
+            </plugin>
+        </plugins>
+    </build>
+
+
+    <profiles>
+        <profile>
+            <id>skipAllTests</id>
+            <!--
+            Profiles can be automatically triggered based on the detected state of the build environment. These triggers
+             are specified via an <activation> section in the profile itself. Currently, this detection is limited to
+             prefix-matching of the JDK version, the presence of a system property or the value of a system property.
+             Here are some examples.
+
+            The following configuration will trigger the profile when the JDK's version starts with "1.4"
+
+            <activation>
+                <jdk>1.8</jdk>
+            </activation>-->
+
+            <!-- activation based on various OS versions
+            <activation>
+                <os>
+                    <name>Windows XP</name>
+                    <family>Windows</family>
+                    <arch>x86</arch>
+                    <version>5.1.2600</version>
+                </os>
+            </activation> -->
+
+            <!-- activation by default
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>-->
+
+            <!-- mvn install -Denv=dev    will make this profile active, and thus skip tests-->
+            <activation>
+                <property>
+                    <name>env</name>
+                    <value>dev</value>
+                </property>
+            </activation>
+
+            <properties>
+                <maven.test.skip>true</maven.test.skip>
+            </properties>
+        </profile>
+    </profiles>
+</project>
