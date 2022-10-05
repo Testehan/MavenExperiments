@@ -1,0 +1,5 @@
+If we call "mvn package -D env=prod" then the profile "prod" will be activated, and
+the values from this profile will be placed in db.properties file from "target"
+Otherwise, the default profile will be used.
+
+Profiles can also be activated like this " mvn package -P prod"

@@ -19,6 +19,7 @@
         <module>checkstylePluginExamples</module>
         <module>scopesExamples</module>
         <module>profileExamples</module>
+        <module>profile2Example</module>
     </modules>
 
 
