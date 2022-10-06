@@ -161,3 +161,12 @@ https://maven.apache.org/settings.html
 
      https://maven.apache.org/guides/mini/guide-encryption.html
     https://stackoverflow.com/questions/46661480/how-to-secure-and-encrypt-setting-xml-paswords-file-in-maven
+
+https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html
+    Although transitive dependencies can implicitly include desired dependencies, it is a good practice to explicitly
+    specify the dependencies your source code uses directly. This best practice proves its value especially when the
+    dependencies of your project change their dependencies.
+
+    For example, assume that your project A specifies a dependency on another project B, and project B specifies a
+    dependency on project C. If you are directly using components in project C, and you don't specify project C in
+    your project A, it may cause build failure when project B suddenly updates/removes its dependency on project C.
